@@ -91,15 +91,15 @@ while (true)
 	for (size_t i = 0; i < n; ++i)
 	{
 		// 处理可读事件
-		if (epoll_events[i].events & POLLIN)
+		if (epoll_events[i].events & EPOLLIN)
 		{
 		}
 		// 处理可写事件
-		else if (epoll_events[i].events & POLLOUT)
+		else if (epoll_events[i].events & EPOLLOUT)
 		{
 		}
 		//处理出错事件
-		else if (epoll_events[i].events & POLLERR)
+		else if (epoll_events[i].events & EPOLLERR)
 		{
 		}
 	}
