@@ -319,4 +319,4 @@ listening on any, link-type LINUX_SLL (Linux cooked), capture size 262144 bytes
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)
+![微信扫码关注](https://github.com/balloonwj/easyserverdev/blob/master/articlelog.jpg)

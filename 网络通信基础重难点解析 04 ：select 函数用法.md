@@ -986,4 +986,4 @@ bool Connect(const char* pServer, short nPort)
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)
+![微信扫码关注](https://github.com/balloonwj/easyserverdev/blob/master/articlelog.jpg)

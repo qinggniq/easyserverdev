@@ -28,4 +28,4 @@ A 端与 B 端之间只有问答模式，即 A 发送给 B 一个请求，B 必�
 
 **欢迎加入高性能服务器开发 QQ 群一起交流：<font color=red> 578019391 </font>。**
 
-![微信扫码关注](http://www.hootina.org/github_easyserverdev/articlelogo.jpg)
+![微信扫码关注](https://github.com/balloonwj/easyserverdev/blob/master/articlelog.jpg)
