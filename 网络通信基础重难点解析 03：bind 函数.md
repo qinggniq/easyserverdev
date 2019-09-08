@@ -6,7 +6,7 @@
 
 上一节的服务器代码中演示了 bind 函数的使用方法，让我们再看一下相关的代码：
 
-```
+```c++
 struct sockaddr_in bindaddr;
 bindaddr.sin_family = AF_INET;
 bindaddr.sin_addr.s_addr = htonl(INADDR_ANY);

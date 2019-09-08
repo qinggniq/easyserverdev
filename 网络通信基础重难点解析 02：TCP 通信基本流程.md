@@ -94,8 +94,8 @@ int main(int argc, char* argv[])
 				ret = send(clientfd, recvBuf, strlen(recvBuf), 0);
 				if (ret != strlen(recvBuf))
 					std::cout << "send data error." << std::endl;
-				
-				std::cout << "send data to client successfully, data: " << recvBuf << std::endl;
+				else
+				    std::cout << "send data to client successfully, data: " << recvBuf << std::endl;
 			} 
 			else 
 			{

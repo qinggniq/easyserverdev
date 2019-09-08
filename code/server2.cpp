@@ -1,5 +1,5 @@
 /**
- * TCP·þÎñÆ÷Í¨ÐÅ»ù±¾Á÷³Ì
+ * TCPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Å»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * zhangyl 2018.12.13
  */
 #include <sys/types.h> 
@@ -12,7 +12,7 @@
 
 int main(int argc, char* argv[])
 {
-    //1.´´½¨Ò»¸öÕìÌýsocket
+    //1.ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½socket
     int listenfd = socket(AF_INET, SOCK_STREAM, 0);
     if (listenfd == -1)
     {
@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    //2.³õÊ¼»¯·þÎñÆ÷µØÖ·
+    //2.ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·
     struct sockaddr_in bindaddr;
     bindaddr.sin_family = AF_INET;
     bindaddr.sin_addr.s_addr = htonl(INADDR_ANY);
@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-	//3.Æô¶¯ÕìÌý
+	//3.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     if (listen(listenfd, SOMAXCONN) == -1)
     {
         std::cout << "listen error." << std::endl;
@@ -40,28 +40,28 @@ int main(int argc, char* argv[])
         return -1;
     }
 	
-	//¼ÇÂ¼ËùÓÐ¿Í»§¶ËÁ¬½ÓµÄÈÝÆ÷
+	//ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ð¿Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½
 	std::vector<int> clientfds;
     while (true)
     {
         struct sockaddr_in clientaddr;
         socklen_t clientaddrlen = sizeof(clientaddr);
-		//4. ½ÓÊÜ¿Í»§¶ËÁ¬½Ó
+		//4. ï¿½ï¿½ï¿½Ü¿Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         int clientfd = accept(listenfd, (struct sockaddr *)&clientaddr, &clientaddrlen);
         if (clientfd != -1)
         {         	
 			char recvBuf[32] = {0};
-			//5. ´Ó¿Í»§¶Ë½ÓÊÜÊý¾Ý
+			//5. ï¿½Ó¿Í»ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			int ret = recv(clientfd, recvBuf, 32, 0);
 			if (ret > 0) 
 			{
 				std::cout << "recv data from client, data: " << recvBuf << std::endl;
-				//6. ½«ÊÕµ½µÄÊý¾ÝÔ­·â²»¶¯µØ·¢¸ø¿Í»§¶Ë
+				//6. ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½â²»ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½
 				ret = send(clientfd, recvBuf, strlen(recvBuf), 0);
 				if (ret != strlen(recvBuf))
 					std::cout << "send data error." << std::endl;
-				
-				std::cout << "send data to client successfully, data: " << recvBuf << std::endl;
+				else
+    				std::cout << "send data to client successfully, data: " << recvBuf << std::endl;
 			} 
 			else 
 			{
@@ -73,7 +73,7 @@ int main(int argc, char* argv[])
         }
     }
 	
-	//7.¹Ø±ÕÕìÌýsocket
+	//7.ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½socket
 	close(listenfd);
 
     return 0;
